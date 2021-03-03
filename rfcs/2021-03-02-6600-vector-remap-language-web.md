@@ -106,9 +106,10 @@ to have a single endpoint, perhaps `/compile`.
 Yet another possibility worth considering would be publishing Wasm modules to hubs like [npm] and
 [Wasmer] that others can use in their own environments. Those modules could be released alongside
 versions of VRL. Tools from the Rust + Wasm ecosystem, like [wasm-pack], make this quite simple in
-principle. With published modules, users could run VRL
-
-It's unlikely, however, that this would be of any benefit to Vector users in the near term.
+principle, requiring only a `wasm-pack publish` to push to npm. With published modules, users could
+run `npm install vrl-wasm` or some equivalent and integrate the binary into their own projects. It's
+unlikely, however, that this would benefit Vector users in the foreseeable future. But if for some
+reason
 
 ## Prior art
 
@@ -116,14 +117,15 @@ When assessing the overall benefit of expanding VRL into the web domain, I belie
 Policy Agent][opa] (OPA) project is a good place to look. OPA has a DSL called [Rego] that you use
 to create policy logic. The maintainers of OPA created an [OPA Playground][opa_playground] that
 enables you to experiment with the language using your own custom JSON inputs and policies, a
-dramatically less cumbersome experience than using OPA on the command line (although, like VRL, OPA
-has an interactive REPL). In that playground, you can "publish" your policies and share the
+dramatically less cumbersome experience than using OPA on the command line (although OPA, like VRL,
+does have an interactive REPL). In that playground, you can "publish" your policies and share the
 resulting URL. One of the core maintainers of OPA confirmed to me that those policies are stored in
 Amazon S3.
 
 ## Plan of attack
 
-TBD. I'd like to get feedback on these preliminary suggestions first and then circle back.
+TBD. I'd like to get feedback on these preliminary suggestions first and then circle back with more
+specifics.
 
 [6184]: https://github.com/timberio/vector/pull/6184
 [6590]: https://github.com/timberio/vector/pull/6590
